@@ -1,5 +1,13 @@
 <html>
     <body>
-        <p>やっほー</p>
+        <p>投稿リスト</p>
+        <table>
+            <tr><th>タイトル</th><th>記事の内容</th></th></tr>
+            {% for post in posts %}
+            <tr>
+                <td>{{post.title}}</td><td>{{post.text}}</td>
+            </tr>
+            {{post}}{% endfor %}
+        </table>
     </body>
 </html>
