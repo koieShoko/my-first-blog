@@ -1,13 +1,12 @@
-<html>
-    <body>
+{% extends 'blog/base.html' %}
+    {% block content %}
         <p>投稿リスト</p>
         <table>
-            <tr><th>タイトル</th><th>記事の内容</th></th></tr>
-            {% for post in posts %}
+            <tr><th>タイトル</th><th>記事の内容</th></tr>
             <tr>
-                <td>{{post.title}}</td><td>{{post.text}}</td>
+                {% for post in posts %}
+                <td><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</td><td>{{post.text}}</td>
             </tr>
-            {{post}}{% endfor %}
+            {% endfor %}
         </table>
-    </body>
-</html>
+{% endblock %}
